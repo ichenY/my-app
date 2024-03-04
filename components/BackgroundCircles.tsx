@@ -15,7 +15,10 @@ function BackgroundCircles({}: Props) {
       transition={{ duration: 2.5 }}
       className="relative flex justify-center items-center"
     >
-      <div className="absolute border border-[#F8C471] rounded-full h-[650px] w-[650px] mt-52 animate-pulse opacity-20" />
+      <div
+        className="absolute border border-[#F8C471] rounded-full h-[650px] w-[650px] animate-pulse opacity-20"
+        style={{ marginTop: "28rem" }}
+      />
     </motion.div>
   );
 }

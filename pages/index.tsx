@@ -3,6 +3,7 @@ import React from "react";
 import Head from "next/head";
 import Navbar from "../components/Navbar";
 import Intro from "../components/Intro";
+import Skills from "@/components/Skills";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -14,8 +15,13 @@ export default function Home() {
       </Head>
 
       <Navbar />
-      <section id="intro" className="snap-center">
+
+      <section id="intro" className="snap-start">
         <Intro />
+      </section>
+
+      <section id="skills" className="snap-center">
+        <Skills />
       </section>
     </div>
   );

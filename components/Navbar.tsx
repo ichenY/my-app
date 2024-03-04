@@ -1,6 +1,8 @@
 import React from "react";
 import NavbarItem from "./NavbarItem";
 import { SocialIcon } from "react-social-icons";
+import { IconContext } from "react-icons";
+import { MdOutlineMailOutline } from "react-icons/md";
 
 const Navbar = () => {
   return (
@@ -22,6 +24,13 @@ const Navbar = () => {
           fgColor="black"
           bgColor="transparent"
         />
+        <IconContext.Provider
+          value={{ color: "black", size: "2.5em", style: { paddingTop: 13 } }}
+        >
+          <a href="mailto:t556.ux@gmail.com" target="_blank">
+            <MdOutlineMailOutline></MdOutlineMailOutline>
+          </a>
+        </IconContext.Provider>
       </div>
     </nav>
   );
