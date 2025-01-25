@@ -20,9 +20,9 @@ export default function Home() {
         <Intro />
       </section>
 
-      {/* <section id="skills" className="snap-center">
+      <section id="skills" className="snap-center">
         <Skill />
-      </section> */}
+      </section>
     </div>
   );
 }

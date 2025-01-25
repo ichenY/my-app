@@ -1,40 +1,103 @@
-import { motion } from "framer-motion";
 import React from "react";
-import SkillItem from "./SkillItem";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  SiPython,
-  SiAngular,
-  SiDocker,
-  SiJenkins,
-  SiKubernetes,
-  SiCsharp,
-  SiPhp,
-  SiHelm,
-} from "react-icons/si";
-
+  faAngular,
+  faPython,
+  faOctopusDeploy,
+  faPhp,
+  faJenkins,
+  faDocker,
+  faBootstrap,
+  faMicrosoft,
+  faLinux,
+} from "@fortawesome/free-brands-svg-icons";
+import { faCloud, faCode } from "@fortawesome/free-solid-svg-icons";
 type Props = {};
 
+const skills = [
+  {
+    name: "Angular",
+    icon: faAngular,
+    level: "Advanced",
+  },
+  {
+    name: "Python",
+    icon: faPython,
+    level: "Advanced",
+  },
+  {
+    name: "PHP",
+    icon: faPhp,
+    level: "Advanced",
+  },
+  {
+    name: "Perl",
+    icon: faCode,
+    level: "Intermediate",
+  },
+  {
+    name: "Linux",
+    icon: faLinux,
+    level: "Intermediate",
+  },
+  {
+    name: "Bootstrap",
+    icon: faBootstrap,
+    level: "Intermediate",
+  },
+  {
+    name: "Azure",
+    icon: faMicrosoft,
+    level: "Intermediate",
+  },
+  {
+    name: "Docker",
+    icon: faDocker,
+    level: "Advanced",
+  },
+  {
+    name: "Kubernetes",
+    icon: faCloud,
+    level: "Advanced",
+  },
+  {
+    name: "Helm",
+    icon: faCloud,
+    level: "Advanced",
+  },
+  {
+    name: "Jenkins",
+    icon: faJenkins,
+    level: "Intermediate",
+  },
+  {
+    name: "Octopus",
+    icon: faOctopusDeploy,
+    level: "Intermediate",
+  },
+];
+
 function Skill({}: Props) {
-  const skills = ["Python", "Csharp", "Php"];
   return (
-    <div className="h-screen">
-      Skills
-      {/* {skills.map((item, index) => (
-        <SkillItem key={index} title={item} />
-      ))} */}
-      {/* <motion.div whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.8 }}> */}
-      {/* <div className="grid p-6 opacity-85 bg-white border border-sky-200 rounded-lg shadow hover:bg-sky-100 dark:bg-sky-800 dark:border-sky-700 dark:hover:bg-sky-700">
-        <SiPython color="#D6DBDF" />
-      </div> */}
-      {/* <SiCsharp color="#D6DBDF" />
-      <SiPhp color="#D6DBDF" />
-      <SiAngular color="#D6DBDF" />
-      <SiDocker color="#D6DBDF" />
-      <SiJenkins color="#D6DBDF" />
-      <SiKubernetes color="#D6DBDF" />
-      <SiHelm color="#D6DBDF" /> */}
-      {/* </motion.div> */}
-    </div>
+    <section className="bg-gray-100 py-12">
+      <div className="container mx-auto">
+        <h2 className="text-3xl font-bold text-center mb-8">My Skills</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+          {skills.map((skill, index) => (
+            <div
+              key={index}
+              className="bg-white rounded-lg shadow-md p-6 flex flex-col items-center transform transition-transform duration-300 hover:scale-105"
+            >
+              <div className="text-4xl mb-4">
+                <FontAwesomeIcon icon={skill.icon} />
+              </div>
+              <h3 className="text-xl font-semibold mb-2">{skill.name}</h3>
+              <p className="text-gray-600">{skill.level}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
   );
 }
 
